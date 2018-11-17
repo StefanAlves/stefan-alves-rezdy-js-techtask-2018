@@ -1,7 +1,7 @@
-import { shallowMount, mount, config } from '@vue/test-utils';
+import { config, mount, shallowMount } from '@vue/test-utils';
 import Recipes from '../Recipes.vue';
 
-config.logModifiedComponents = false
+config.logModifiedComponents = false;
 
 describe('Recipes', () => {
   const recipes = [
@@ -9,31 +9,30 @@ describe('Recipes', () => {
       title: 'Fry-up',
       ingredients: [
           'Bacon',
-          'Eggs'
-      ]
+          'Eggs',
+      ],
     },
     {
       title: 'Salad',
       ingredients: [
         'Lettuce',
-        'Tomato'
-      ]
-    }
+        'Tomato',
+      ],
+    },
   ];
-  
 
   it('renders correctly', () => {
     const wrapper = mount(Recipes, {
-        propsData: { recipes }
+        propsData: { recipes },
     });
-    expect(wrapper.element).toMatchSnapshot()
-  })
+    expect(wrapper.element).toMatchSnapshot();
+  });
 
   it('should render', () => {
     const wrapper = shallowMount(Recipes, {
-        propsData: { recipes }
-    })
+        propsData: { recipes },
+    });
     const recipeStubs = wrapper.findAll('recipe-stub');
-    expect(recipeStubs.length).toEqual(2)
+    expect(recipeStubs.length).toEqual(2);
   });
 });

@@ -1,4 +1,4 @@
-import { mount, createLocalVue, config } from '@vue/test-utils';
+import { config, createLocalVue, mount } from '@vue/test-utils';
 import * as Vuex from 'vuex';
 import getters from '../../../store/getters';
 import Home from '../Home.vue';
@@ -10,59 +10,59 @@ config.logModifiedComponents = false;
 describe('Home', () => {
 
   let store: any;
-  
+
   beforeEach(() => {
     store = new Vuex.Store({
       state: {
-        recipes : [
+        recipes: [
           {
             title: 'Fry-up',
             ingredients: [
-                'Bacon',
-                'Eggs'
-            ]
+              'Bacon',
+              'Eggs',
+            ],
           },
           {
             title: 'Salad',
             ingredients: [
               'Lettuce',
-              'Tomato'
-            ]
-          }
+              'Tomato',
+            ],
+          },
         ],
         ingredients: {
           Bacon: {
-            title: 'Bacon',
+            "title": 'Bacon',
             'best-before': '2018-11-25',
-            'use-by': '2018-11-30'
+            'use-by': '2018-11-30',
           },
           Eggs: {
-            title: 'Eggs',
+            "title": 'Eggs',
             'best-before': '2018-11-20',
-            'use-by': '2018-11-25'
+            'use-by': '2018-11-25',
           },
           Lettuce: {
-            title: 'Lettuce',
+            "title": 'Lettuce',
             'best-before': '2018-11-20',
-            'use-by': '2018-11-25'
+            'use-by': '2018-11-25',
           },
           Tomato: {
-            title: 'Tomato',
+            "title": 'Tomato',
             'best-before': '2018-11-20',
-            'use-by': '2018-11-25'
-          }
-        }
+            'use-by': '2018-11-25',
+          },
+        },
       },
-      getters
+      getters,
     });
-  })
+  });
 
   it('should render', () => {
 
-  // localVue.use(Vuex)
+    // localVue.use(Vuex)
     const wrapper = mount(Home, { store, localVue });
     expect(wrapper.element).toMatchSnapshot();
-    const button = wrapper.find('button')
+    const button = wrapper.find('button');
     button.trigger('click');
     expect(wrapper.element).toMatchSnapshot();
     // console.log(wrapper.html());

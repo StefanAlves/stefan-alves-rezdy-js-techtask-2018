@@ -10,7 +10,9 @@
             "single"
         ],
         "indent": [
-            true
+            true,
+            "spaces",
+            2
         ],
         "interface-name": [
             false

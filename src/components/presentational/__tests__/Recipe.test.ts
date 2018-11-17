@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils';
+import { mount, shallowMount } from '@vue/test-utils';
 import Recipe from '../Recipe.vue';
 
 describe('Recipe', () => {
@@ -10,22 +10,22 @@ describe('Recipe', () => {
             'Baked Beans',
             'Mushrooms',
             'Sausage',
-            'Bread'
-        ]
-    }
+            'Bread',
+        ],
+    };
 
     it('renders correctly', () => {
         const wrapper = mount(Recipe, {
-            propsData: { recipe }
+            propsData: { recipe },
         });
-        expect(wrapper.element).toMatchSnapshot()
-    })
+        expect(wrapper.element).toMatchSnapshot();
+    });
 
     it('should render', () => {
-        
+
         const wrapper = shallowMount(Recipe, {
-            propsData: { recipe }
-        })
+            propsData: { recipe },
+        });
         const div = wrapper.findAll('div').at(1);
         const li = wrapper.findAll('li');
         expect(div.text()).toEqual('Fry-up');
@@ -37,7 +37,7 @@ describe('Recipe', () => {
             'Baked Beans',
             'Mushrooms',
             'Sausage',
-            'Bread'
+            'Bread',
         ]);
     });
 });

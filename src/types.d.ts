@@ -1,15 +1,15 @@
-export type Ingredient = {
-  title: string,
-  'best-before': string,
-  'use-by': string
+export interface Ingredient {
+  title: string;
+  'best-before': string;
+  'use-by': string;
 }
 
-export type Recipe = {
-  title: string, 
-  ingredients: string[]
+export interface Recipe {
+  title: string;
+  ingredients: string[];
 }
 
-export type State = {
-  recipes: Recipe[],
-  ingredients: { [key: string]: Ingredient },// Ingredient[]
+export interface State {
+  recipes: Recipe[];
+  ingredients: { [key: string]: Ingredient }; // Ingredient[]
 }

@@ -7,24 +7,24 @@ describe('Filter recipes', () => {
         title: 'test',
         ingredients: [
           'Ham',
-          'Ketchup'
-        ]
-      }
-    ]
+          'Ketchup',
+        ],
+      },
+    ];
     const ingredients = {
       Ham: {
-          "title": "Ham",
-          "best-before": "2018-11-25",
-          "use-by": "2018-11-30"
+        'title': 'Ham',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
       Ketchup: {
-        "title": "Ketchup",
-        "best-before": "2018-11-25",
-        "use-by": "2018-11-30"
+        'title': 'Ketchup',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
-    }
+    };
     const date = Date.parse('2018-11-20');
-    expect(filterRecipes(recipes, ingredients, date)).toEqual(recipes)
+    expect(filterRecipes(recipes, ingredients, date)).toEqual(recipes);
   });
 
   it('should exclude recipes with ingredients with expired used date ', () => {
@@ -33,24 +33,24 @@ describe('Filter recipes', () => {
         title: 'test',
         ingredients: [
           'Ham',
-          'Ketchup'
-        ]
-      }
-    ]
+          'Ketchup',
+        ],
+      },
+    ];
     const ingredients = {
       Ham: {
-          "title": "Ham",
-          "best-before": "2018-11-25",
-          "use-by": "2018-11-30"
+        'title': 'Ham',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
       Ketchup: {
-        "title": "Ketchup",
-        "best-before": "2018-11-25",
-        "use-by": "2018-11-30"
+        'title': 'Ketchup',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
-    }
+    };
     const date = Date.parse('2018-12-05');
-    expect(filterRecipes(recipes, ingredients, date)).toEqual([])
+    expect(filterRecipes(recipes, ingredients, date)).toEqual([]);
   });
 
   it('should manage multiple recipes and only return valid ones', () => {
@@ -59,36 +59,36 @@ describe('Filter recipes', () => {
         title: 'ham recipe',
         ingredients: [
           'Ham',
-        ]
+        ],
       },
       {
         title: 'ketchup recipe',
         ingredients: [
-          'Ketchup'
-        ]
-      }
-    ]
+          'Ketchup',
+        ],
+      },
+    ];
     const ingredients = {
       Ham: {
-          "title": "Ham",
-          "best-before": "2018-11-25",
-          "use-by": "2018-11-25"
+        'title': 'Ham',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-25',
       },
       Ketchup: {
-        "title": "Ketchup",
-        "best-before": "2018-11-25",
-        "use-by": "2018-11-30"
+        'title': 'Ketchup',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
-    }
+    };
     const date = Date.parse('2018-11-26');
     expect(filterRecipes(recipes, ingredients, date)).toEqual([
       {
         title: 'ketchup recipe',
         ingredients: [
-          'Ketchup'
-        ]
-      }
-    ])
+          'Ketchup',
+        ],
+      },
+    ]);
   });
 
   it('should treat a not listed ingredient as valid', () => {
@@ -98,23 +98,23 @@ describe('Filter recipes', () => {
         ingredients: [
           'Ham',
           'Ketchup',
-          'not listed'
-        ]
-      }
-    ]
+          'not listed',
+        ],
+      },
+    ];
     const ingredients = {
       Ham: {
-          "title": "Ham",
-          "best-before": "2018-11-25",
-          "use-by": "2018-11-30"
+        'title': 'Ham',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
       Ketchup: {
-        "title": "Ketchup",
-        "best-before": "2018-11-25",
-        "use-by": "2018-11-30"
+        'title': 'Ketchup',
+        'best-before': '2018-11-25',
+        'use-by': '2018-11-30',
       },
-    }
+    };
     const date = Date.parse('2018-11-20');
-    expect(filterRecipes(recipes, ingredients, date)).toEqual(recipes)
+    expect(filterRecipes(recipes, ingredients, date)).toEqual(recipes);
   });
-})
+});
