@@ -11,17 +11,16 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { mapGetters } from 'vuex'
-import Recipes from '../presentational/Recipes.vue';
+import { mapGetters } from "vuex";
+import Recipes from "../presentational/Recipes.vue";
 
 @Component({
   components: { Recipes },
-  computed: mapGetters([
-    'getRecipes'
-  ])
+  computed: mapGetters(["getRecipes"])
 })
 export default class Home extends Vue {
-  @Prop() recipes!: string;
+  @Prop()
+  recipes!: string;
   // local props
   showRecipes = false;
   /**
@@ -34,15 +33,15 @@ export default class Home extends Vue {
 </script>
 
 <style>
-  .btn{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 100%;
-  }
+.btn {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
+}
 </style>

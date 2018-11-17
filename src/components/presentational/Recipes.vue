@@ -7,12 +7,13 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import Recipe from './Recipe.vue';
+import Recipe from "./Recipe.vue";
 
 @Component({
-  components:{ Recipe }
+  components: { Recipe }
 })
 export default class Recipes extends Vue {
-    @Prop() recipes!: string;
+  @Prop()
+  recipes!: string;
 }
 </script>
