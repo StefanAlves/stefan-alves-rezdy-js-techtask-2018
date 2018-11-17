@@ -10,7 +10,11 @@
         ```
 - Install [docker and docker-compose](https://www.docker.com/)
 - Install an editor. Recommended [visual studio code](https://code.visualstudio.com/)
-
+- Insall NPX: 
+   ```
+   yarn global add npx
+   ```
+   
 # Install dependencies
 
 ```shell
@@ -19,15 +23,14 @@ yarn
 
 # Standardize git commits with commitizen
 
-Use commitizen for git commits. By using commitzen we can understand when what are the type of changes and apply semantic release and automatically generate changelog. 
-
-Use the command:
+Use commitizen for git commits. [Commitizen](https://github.com/commitizen/cz-cli) helps standerdazing commit messages.
+To use commitezen please use the bellow command:
 
 ```
 yarn commit
 ```
 
-And feel the commit message.
+You'll be prompted to fill out any required commit fields at commit time 
 
 # Running application
 
@@ -45,7 +48,7 @@ yarn test
 
 # Project Structure
 
-src
+* src
     - components 
         - presentationl - simple atomic components
             - recipes
