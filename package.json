@@ -1,0 +1,92 @@
+{
+  "name": "stefan-alves-rezdy-js-techtask-2018",
+  "version": "1.0.0-semantic-release",
+  "private": true,
+  "description": "Vuejs recipes application",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server .",
+    "start": "concurrently \"webpack --watch \" \"yarn serve\"",
+    "commit": "npx git-cz",
+    "build": "yarn test && yarn build:dist",
+    "build:dist": "webpack",
+    "semantic-release": "semantic-release --no-ci",
+    "test": "npx jest"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Stefan Alves",
+    "url": "https://github.com/"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "vue": "^2.5.2",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.0",
+    "@semantic-release/git": "^7.0.4",
+    "@types/jest": "^23.3.9",
+    "@types/strip-json-comments": "^0.0.30",
+    "@vue/test-utils": "^1.0.0-beta.25",
+    "commitizen": "^3.0.2",
+    "css-loader": "^0.28.1",
+    "husky": "^1.1.1",
+    "jest": "^23.6.0",
+    "semantic-release": "^15.9.17",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.7.2",
+    "vue-jest": "^3.0.0",
+    "vue-loader": "^12.0.3",
+    "vue-template-compiler": "^2.5.2",
+    "webpack": "^2.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "force": true,
+    "changelogFile": "changelog.md",
+    "verifyConditions": [
+      "@semantic-release/git"
+    ],
+    "generateNotes": [
+      "@semantic-release/release-notes-generator"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "publish": [],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "vue"
+    ],
+    "testURL": "http://localhost/",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "hooks": {
+    "pre-push": "yarn test"
+  }
+}

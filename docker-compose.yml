@@ -1,0 +1,15 @@
+version: '2'
+services:
+  recipes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recipes
+    volumes:
+      - './src:/app/src:rw'
+    ports:
+      - '9000:8080'
+    extra_hosts:
+      - 'vm_ip:172.18.0.1'
+    environment:
+      - NODE_ENV=development
