@@ -2,7 +2,7 @@
 <!-- This is an alternative way to define the Hello component using decorators -->
 <template>
   <div>
-    <button @click="displayRecipes">What's for Lunch</button>
+    <button class="btn" @click="displayRecipes">What's for Lunch</button>
     <div v-if="showRecipes" :recipes="getRecipes">
       <recipes :recipes="getRecipes" />
     </div>
@@ -32,3 +32,17 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style>
+  .btn{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+  }
+</style>
