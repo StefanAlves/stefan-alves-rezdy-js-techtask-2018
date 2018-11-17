@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render 1`] = `
+<div>
+  <button
+    class="btn"
+  >
+    What's for Lunch
+  </button>
+   
+  <!---->
+</div>
+`;
+
+exports[`Home should render 2`] = `
+<div>
+  <button
+    class="btn"
+  >
+    What's for Lunch
+  </button>
+   
+  <div
+    recipes="[object Object],[object Object]"
+  >
+    <div>
+      <div
+        class="recipe"
+      >
+        <div
+          class="title"
+        >
+          Fry-up
+        </div>
+         
+        <ul
+          class="ingredients"
+        >
+          <li
+            class="ingredient"
+          >
+            
+      Bacon
+    
+          </li>
+          <li
+            class="ingredient"
+          >
+            
+      Eggs
+    
+          </li>
+        </ul>
+      </div>
+      <div
+        class="recipe"
+      >
+        <div
+          class="title"
+        >
+          Salad
+        </div>
+         
+        <ul
+          class="ingredients"
+        >
+          <li
+            class="ingredient"
+          >
+            
+      Lettuce
+    
+          </li>
+          <li
+            class="ingredient"
+          >
+            
+      Tomato
+    
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

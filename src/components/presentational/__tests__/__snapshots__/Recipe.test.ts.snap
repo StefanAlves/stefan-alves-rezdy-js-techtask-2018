@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe renders correctly 1`] = `
+<div
+  class="recipe"
+>
+  <div
+    class="title"
+  >
+    Fry-up
+  </div>
+   
+  <ul
+    class="ingredients"
+  >
+    <li
+      class="ingredient"
+    >
+      
+      Bacon
+    
+    </li>
+    <li
+      class="ingredient"
+    >
+      
+      Eggs
+    
+    </li>
+    <li
+      class="ingredient"
+    >
+      
+      Baked Beans
+    
+    </li>
+    <li
+      class="ingredient"
+    >
+      
+      Mushrooms
+    
+    </li>
+    <li
+      class="ingredient"
+    >
+      
+      Sausage
+    
+    </li>
+    <li
+      class="ingredient"
+    >
+      
+      Bread
+    
+    </li>
+  </ul>
+</div>
+`;
