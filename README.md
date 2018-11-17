@@ -69,13 +69,19 @@ docker build -f Dockerfile.prod.Dockerfile -t app-name .
 ```
 
 ```
-docker run image-name 
+docker run -p 5000:8080 app-name 
 ```
 
+Open the browser and go to [localhost](http://127.0.0.1:5000/)
+
 ## In a CICD environment semantic release can be integrated
+
+Please read [semantic release](https://semantic-release.gitbook.io/semantic-release/).
+
+Running semantic release in this project:
 
 ```
 yarn semantic-release
 ```
 
-**required the github token setup**
+**Requires github token setup**
