@@ -10,7 +10,11 @@
         ```
 - Install [docker and docker-compose](https://www.docker.com/)
 - Install an editor. Recommended [visual studio code](https://code.visualstudio.com/)
-
+- Insall NPX: 
+   ```
+   yarn global add npx
+   ```
+   
 # Install dependencies
 
 ```shell
